@@ -1,0 +1,30 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.rest.MainActivity" >
+
+
+    <item
+        android:id="@+id/tutorial"
+        android:icon="@android:drawable/ic_menu_info_details"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="@string/tutorial"/>
+    <item
+        android:id="@+id/logOut"
+        android:icon="@android:drawable/ic_delete"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="@string/logOut"/>
+    <item
+        android:id="@+id/misCampannas"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/misCampannas"/>
+    
+     <item
+        android:id="@+id/exit"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/exit"/>
+
+</menu>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.rest"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="14" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.occulus.rest.Login"
+            android:label="@string/title_activity_login" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.occulus.rest.MainActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.occulus.rest.Activity1"
+            android:label="@string/title_activity_activity1" >
+        </activity>
+        <activity
+            android:name="com.occulus.rest.Registro"
+            android:label="@string/title_activity_registro" >
+        </activity>
+        <activity
+            android:name="com.occulus.rest.Perfil"
+            android:label="@string/title_activity_perfil" >
+        </activity>
+        <activity android:name="com.addthis.ui.activities.ATAllServiceActivity" />
+        <activity android:name="com.addthis.ui.activities.ATFavoriteServiceActivity" />
+        <activity android:name="com.addthis.ui.activities.ATShareActivity" />
+        <activity
+            android:name="com.addthis.ui.activities.ATActivityGroup"
+            android:configChanges="orientation" />
+        <activity
+            android:name="com.occulus.rest.ProponCampanna"
+            android:label="@string/title_activity_propon_campanna" >
+        </activity>
+        <activity android:name="com.facebook.LoginActivity"
+           android:theme="@android:style/Theme.Translucent.NoTitleBar"
+           android:label="@string/app_name" />
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
+    </application>
+
+</manifest>

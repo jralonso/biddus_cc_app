@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Campañas</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="registrarse"><u>Registrarse</u></string>
+    <string name="logOut"><u>Log Out</u></string>
+    <string name="meApunto">Me apunto</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="contrasenna">Contraseña</string>
+    <string name="enviar">Enviar</string>
+    <string name="registro">Registro</string>
+    <string name="nombre">Nombre</string>
+    <string name="miPerfil">Mi perfil</string>
+    <string name="proponCampanna">Propón tu campaña</string>
+    <string name="proponUnaCampanna">Propón una campaña</string>
+    <string name="producto">Producto</string>
+    <string name="marca">Marca</string>
+    <string name="modelo">Modelo</string>
+    <string name="categoria">Categoría</string>
+    <string name="exit">Exit</string>
+    <string name="precioDeseado">Precio deseado</string>
+    <string name="fechaFinal">Fecha\nfinalización: </string>
+    <string name="misCampannas">Mis campañas </string>
+    <string name="tutorial">Tutorial</string>
+    <string name="campannasColectivas">Campañas Colectivas</string>
+    <string name="share">Share</string>
+     <string-array name="categorias">
+        <item>Material deportivo</item>
+        <item>Electrodomésticos</item>
+        <item>Electrónica</item>
+        <item>Casa y jardín</item>
+        <item>Oficina</item>
+        <item>Bebes y niños</item>
+    </string-array>
+    <string name="confirmarContrasenna">Confirmar\ncontraseña</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_activity1">Detalle de Campaña</string>
+    <string name="title_activity_login">Compra colectiva</string>
+    <string name="title_activity_registro">Registro</string>
+    <string name="title_activity_perfil">Mis campañas</string>
+    <string name="title_activity_propon_campanna">Propon una campaña</string>
+    <string name="app_id">654020318015770</string>    
+</resources>
