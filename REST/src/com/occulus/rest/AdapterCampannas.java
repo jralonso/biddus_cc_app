@@ -2,7 +2,7 @@ package com.occulus.rest;
 
 import java.util.ArrayList;
 
-import com.example.rest.R;
+import com.occulus.rest.R;
 
 import android.app.Activity;
 import android.content.Context;

@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.example.rest;
+package com.occulus.rest;
 
 public final class R {
     public static final class array {
@@ -65,47 +65,48 @@ public final class R {
         public static final int returntofavorite=0x7f020013;
         public static final int search=0x7f020014;
         public static final int tick=0x7f020015;
-        public static final int twitter=0x7f020016;
+        public static final int tuto=0x7f020016;
+        public static final int twitter=0x7f020017;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0036;
-        public static final int actionbar=0x7f0a002c;
+        public static final int action_settings=0x7f0a0037;
+        public static final int actionbar=0x7f0a002d;
         public static final int boton=0x7f0a000e;
         public static final int botonApuntar=0x7f0a0005;
         public static final int botonImagen1=0x7f0a0006;
         public static final int botonImagen2=0x7f0a0007;
         public static final int categorias=0x7f0a001b;
         public static final int confirmPass=0x7f0a0025;
-        public static final int descEditText=0x7f0a0032;
-        public static final int descTextView=0x7f0a0031;
+        public static final int descEditText=0x7f0a0033;
+        public static final int descTextView=0x7f0a0032;
         public static final int detalles=0x7f0a0004;
         public static final int email=0x7f0a0021;
         public static final int enviarCampanna=0x7f0a001e;
-        public static final int exit=0x7f0a003a;
-        public static final int favlistplaceholder=0x7f0a002d;
+        public static final int exit=0x7f0a003b;
+        public static final int favlistplaceholder=0x7f0a002e;
         public static final int fechaFin=0x7f0a0002;
-        public static final int foto=0x7f0a0034;
-        public static final int icon=0x7f0a0029;
-        public static final int imageAttachedText=0x7f0a0033;
+        public static final int foto=0x7f0a0035;
+        public static final int icon=0x7f0a002a;
+        public static final int imageAttachedText=0x7f0a0034;
         public static final int imagenDetalle=0x7f0a0001;
         public static final int lblfechaFin=0x7f0a0003;
-        public static final int leftItem=0x7f0a0026;
+        public static final int leftItem=0x7f0a0027;
         public static final int lista=0x7f0a0010;
         public static final int listaPerfil=0x7f0a0012;
-        public static final int logOut=0x7f0a0038;
+        public static final int logOut=0x7f0a0039;
         public static final int marca=0x7f0a0017;
-        public static final int misCampannas=0x7f0a0039;
+        public static final int misCampannas=0x7f0a003a;
         public static final int modelo=0x7f0a0019;
         public static final int nombre=0x7f0a0023;
         public static final int pass=0x7f0a000c;
-        public static final int placeholderView=0x7f0a002e;
+        public static final int placeholderView=0x7f0a002f;
         public static final int precio=0x7f0a001d;
         public static final int producto=0x7f0a0015;
         public static final int proponCampanna=0x7f0a0011;
         public static final int registro=0x7f0a000d;
-        public static final int rightItem=0x7f0a0028;
-        public static final int text=0x7f0a002a;
-        public static final int textLabel=0x7f0a0027;
+        public static final int rightItem=0x7f0a0029;
+        public static final int text=0x7f0a002b;
+        public static final int textLabel=0x7f0a0028;
         public static final int textoCategoria=0x7f0a001a;
         public static final int textoConfirmPass=0x7f0a0024;
         public static final int textoEmail=0x7f0a0020;
@@ -116,17 +117,18 @@ public final class R {
         public static final int textoPrecio=0x7f0a001c;
         public static final int textoProducto=0x7f0a0014;
         public static final int textoUsuario=0x7f0a0009;
-        public static final int titleEditText=0x7f0a0030;
-        public static final int titleTextView=0x7f0a002f;
-        public static final int titulo=0x7f0a0035;
+        public static final int titleEditText=0x7f0a0031;
+        public static final int titleTextView=0x7f0a0030;
+        public static final int titulo=0x7f0a0036;
         public static final int tituloCampannas=0x7f0a000f;
         public static final int tituloDetalles=0x7f0a0000;
         public static final int tituloLogin=0x7f0a0008;
         public static final int tituloProponCamp=0x7f0a0013;
         public static final int tituloRegistro=0x7f0a001f;
-        public static final int tutorial=0x7f0a0037;
+        public static final int tuto=0x7f0a0026;
+        public static final int tutorial=0x7f0a0038;
         public static final int user=0x7f0a000a;
-        public static final int webview=0x7f0a002b;
+        public static final int webview=0x7f0a002c;
     }
     public static final class layout {
         public static final int activity_activity1=0x7f030000;
@@ -135,21 +137,24 @@ public final class R {
         public static final int activity_perfil=0x7f030003;
         public static final int activity_propon_campanna=0x7f030004;
         public static final int activity_registro=0x7f030005;
-        public static final int atactionbar=0x7f030006;
-        public static final int atlistitem_image_text=0x7f030007;
-        public static final int atoexchangewebview=0x7f030008;
-        public static final int atservicelistview=0x7f030009;
-        public static final int atshareactivity=0x7f03000a;
-        public static final int atshareview=0x7f03000b;
-        public static final int itemlista=0x7f03000c;
+        public static final int activity_tutorial=0x7f030006;
+        public static final int atactionbar=0x7f030007;
+        public static final int atlistitem_image_text=0x7f030008;
+        public static final int atoexchangewebview=0x7f030009;
+        public static final int atservicelistview=0x7f03000a;
+        public static final int atshareactivity=0x7f03000b;
+        public static final int atshareview=0x7f03000c;
+        public static final int itemlista=0x7f03000d;
     }
     public static final class menu {
         public static final int activity1=0x7f090000;
         public static final int login=0x7f090001;
         public static final int main=0x7f090002;
-        public static final int perfil=0x7f090003;
-        public static final int propon_campanna=0x7f090004;
-        public static final int registro=0x7f090005;
+        public static final int notifica=0x7f090003;
+        public static final int perfil=0x7f090004;
+        public static final int propon_campanna=0x7f090005;
+        public static final int registro=0x7f090006;
+        public static final int tutorial=0x7f090007;
     }
     public static final class string {
         public static final int action_settings=0x7f05002f;
@@ -203,6 +208,7 @@ public final class R {
         public static final int title_activity_perfil=0x7f050033;
         public static final int title_activity_propon_campanna=0x7f050034;
         public static final int title_activity_registro=0x7f050032;
+        public static final int title_activity_tutorial=0x7f050036;
         public static final int tutorial=0x7f05002b;
         public static final int uploading_please_wait=0x7f05000f;
         public static final int username=0x7f050004;

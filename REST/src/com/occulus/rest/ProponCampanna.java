@@ -1,6 +1,6 @@
 package com.occulus.rest;
 
-import com.example.rest.R;
+import com.occulus.rest.R;
 
 import android.app.Activity;
 import android.os.Bundle;

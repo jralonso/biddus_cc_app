@@ -16,57 +16,6 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 
-import twitter4j.AccountSettings;
-import twitter4j.Category;
-import twitter4j.DirectMessage;
-import twitter4j.Friendship;
-import twitter4j.GeoLocation;
-import twitter4j.GeoQuery;
-import twitter4j.IDs;
-import twitter4j.Location;
-import twitter4j.OEmbed;
-import twitter4j.OEmbedRequest;
-import twitter4j.PagableResponseList;
-import twitter4j.Paging;
-import twitter4j.Place;
-import twitter4j.Query;
-import twitter4j.QueryResult;
-import twitter4j.RateLimitStatus;
-import twitter4j.RateLimitStatusListener;
-import twitter4j.Relationship;
-import twitter4j.ResponseList;
-import twitter4j.SavedSearch;
-import twitter4j.Status;
-import twitter4j.StatusUpdate;
-import twitter4j.Trends;
-import twitter4j.TweetEntity;
-import twitter4j.Twitter;
-import twitter4j.TwitterAPIConfiguration;
-import twitter4j.TwitterException;
-import twitter4j.TwitterFactory;
-import twitter4j.UploadedMedia;
-import twitter4j.User;
-import twitter4j.UserList;
-import twitter4j.api.DirectMessagesResources;
-import twitter4j.api.FavoritesResources;
-import twitter4j.api.FriendsFollowersResources;
-import twitter4j.api.HelpResources;
-import twitter4j.api.ListsResources;
-import twitter4j.api.PlacesGeoResources;
-import twitter4j.api.SavedSearchesResources;
-import twitter4j.api.SearchResource;
-import twitter4j.api.SpamReportingResource;
-import twitter4j.api.SuggestedUsersResources;
-import twitter4j.api.TimelinesResources;
-import twitter4j.api.TrendsResources;
-import twitter4j.api.TweetsResources;
-import twitter4j.api.UsersResources;
-import twitter4j.auth.AccessToken;
-import twitter4j.auth.Authorization;
-import twitter4j.auth.OAuth2Token;
-import twitter4j.auth.RequestToken;
-import twitter4j.conf.Configuration;
-
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -89,13 +38,7 @@ import com.addthis.core.AddThis;
 import com.addthis.core.Config;
 import com.addthis.error.ATDatabaseException;
 import com.addthis.error.ATSharerException;
-import com.example.rest.R;
-//import com.addthis.core.AddThis;
-//import com.addthis.core.Config;
-//import com.addthis.error.ATDatabaseException;
-//import com.addthis.error.ATSharerException;
-//import com.addthis.models.ATShareItem;
-//import com.addthis.ui.views.ATButton;
+import com.occulus.rest.R;
 
 public class Activity1 extends Activity {
 	private int id;
@@ -154,6 +97,7 @@ public class Activity1 extends Activity {
 
 		imB1 = (ImageButton) findViewById(R.id.botonImagen1);
 		imB2 = (ImageButton) findViewById(R.id.botonImagen2);
+	
 		imB1.setOnClickListener(new OnClickListener() {
 
 			@Override

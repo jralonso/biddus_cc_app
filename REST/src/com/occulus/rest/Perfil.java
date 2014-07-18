@@ -14,7 +14,7 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import com.example.rest.R;
+import com.occulus.rest.R;
 
 import android.R.color;
 import android.R.drawable;

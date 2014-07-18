@@ -8,7 +8,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 
-import com.example.rest.R;
+import com.occulus.rest.R;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -114,7 +114,7 @@ public class Registro extends Activity {
 				JSONObject dato = new JSONObject();
 
 				dato.put("email", email);
-				dato.put("name", nombre);
+				dato.put("biddus_name", nombre);
 				dato.put("password", pass);
 				dato.put("password_confirmation", rePass);
 				parentData.put("user", dato);
@@ -159,8 +159,12 @@ public class Registro extends Activity {
 
 				Intent intent = new Intent(Registro.this, MainActivity.class);
 				// Log.v("Login final", login);
-				intent.putExtra("login", login);
-				intent.putExtra("user_id", user_id);
+				
+//				intent.putExtra("login", login);
+//				intent.putExtra("user_id", user_id);
+
+				c.setToken(login);
+				c.setUsuario(user_id);
 				startActivity(intent);
 
 			} else {

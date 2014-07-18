@@ -1,7 +1,5 @@
 package com.occulus.rest;
 
-import java.util.Arrays;
-
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
@@ -10,21 +8,22 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 
-import com.example.rest.R;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.occulus.rest.R;
+import com.parse.Parse;
+import com.parse.ParseInstallation;
+import com.parse.PushService;
 
 public class Login extends Activity {
 	private EditText user;
@@ -45,6 +44,7 @@ public class Login extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
+
 
 		c = new Configuracion();
 
@@ -112,8 +112,8 @@ public class Login extends Activity {
 
 			HttpPost post = new HttpPost(c.getUrlLogin());
 
-			post.setHeader("content-type", "application/json");
-			post.setHeader("accept", "application/json");
+			post.setHeader("Content-type", "application/json");
+			post.setHeader("Accept", "application/json");
 
 			try {
 				// Construimos el objeto cliente en formato JSON
@@ -179,8 +179,12 @@ public class Login extends Activity {
 
 				Intent intent = new Intent(Login.this, MainActivity.class);
 				// Log.v("Login final", login);
-				intent.putExtra("login", login);
-				intent.putExtra("user_id", user_id);
+
+				// intent.putExtra("login", login);
+				// intent.putExtra("user_id", user_id);
+
+				c.setUsuario(user_id);
+				c.setToken(login);
 
 				startActivity(intent);
 
@@ -195,7 +199,5 @@ public class Login extends Activity {
 	// private void onRestartApuntado() {
 	// finish();
 	// }
-
-
 
 }

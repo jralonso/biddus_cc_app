@@ -40,28 +40,28 @@ public final class R {
 		public static final int search = 0x7f020014;
 	}
 	public static final class id {
-		public static final int actionbar = 0x7f0a002c;
-		public static final int descEditText = 0x7f0a0032;
-		public static final int descTextView = 0x7f0a0031;
-		public static final int favlistplaceholder = 0x7f0a002d;
-		public static final int icon = 0x7f0a0029;
-		public static final int imageAttachedText = 0x7f0a0033;
-		public static final int leftItem = 0x7f0a0026;
-		public static final int placeholderView = 0x7f0a002e;
-		public static final int rightItem = 0x7f0a0028;
-		public static final int text = 0x7f0a002a;
-		public static final int textLabel = 0x7f0a0027;
-		public static final int titleEditText = 0x7f0a0030;
-		public static final int titleTextView = 0x7f0a002f;
-		public static final int webview = 0x7f0a002b;
+		public static final int actionbar = 0x7f0a002d;
+		public static final int descEditText = 0x7f0a0033;
+		public static final int descTextView = 0x7f0a0032;
+		public static final int favlistplaceholder = 0x7f0a002e;
+		public static final int icon = 0x7f0a002a;
+		public static final int imageAttachedText = 0x7f0a0034;
+		public static final int leftItem = 0x7f0a0027;
+		public static final int placeholderView = 0x7f0a002f;
+		public static final int rightItem = 0x7f0a0029;
+		public static final int text = 0x7f0a002b;
+		public static final int textLabel = 0x7f0a0028;
+		public static final int titleEditText = 0x7f0a0031;
+		public static final int titleTextView = 0x7f0a0030;
+		public static final int webview = 0x7f0a002c;
 	}
 	public static final class layout {
-		public static final int atactionbar = 0x7f030006;
-		public static final int atlistitem_image_text = 0x7f030007;
-		public static final int atoexchangewebview = 0x7f030008;
-		public static final int atservicelistview = 0x7f030009;
-		public static final int atshareactivity = 0x7f03000a;
-		public static final int atshareview = 0x7f03000b;
+		public static final int atactionbar = 0x7f030007;
+		public static final int atlistitem_image_text = 0x7f030008;
+		public static final int atoexchangewebview = 0x7f030009;
+		public static final int atservicelistview = 0x7f03000a;
+		public static final int atshareactivity = 0x7f03000b;
+		public static final int atshareview = 0x7f03000c;
 	}
 	public static final class string {
 		public static final int allservice_activity_title = 0x7f050001;

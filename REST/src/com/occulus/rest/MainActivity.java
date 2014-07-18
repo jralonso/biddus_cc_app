@@ -5,6 +5,7 @@ import java.net.HttpURLConnection;
 import java.net.SocketException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -13,10 +14,15 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
+import android.app.Service;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -37,7 +43,15 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.rest.R;
+import com.occulus.rest.R;
+import com.parse.Parse;
+import com.parse.ParseAnalytics;
+import com.parse.ParseBroadcastReceiver;
+import com.parse.ParseCloud;
+import com.parse.ParseInstallation;
+import com.parse.ParseRelation;
+import com.parse.ParseTwitterUtils;
+import com.parse.PushService;
 
 public class MainActivity extends Activity {
 	// private TextView lblResultado;
@@ -67,13 +81,86 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
+		Parse.initialize(this, "PAkvxW7z7T7k5TLHbMQAV0uKXBeNK20iVtpLNTYr",
+				"DguMmFZPBJOjlAr4SoAG0cYeFgrl6wdYSSNU0lkl");
+
+		PushService.subscribe(this, "Biddus", MainActivity.class);
+
+		// PushService.setDefaultPushCallback(MainActivity.this,
+		// MainActivity.class);
+		//
+		// Crear notificaciones parse con un id distinto para cada dispositivo
+		//
+		// String androidId =
+		// Secure.getString(getApplicationContext().getContentResolver(),Secure.ANDROID_ID);
+		// Parse.initialize(this, "KEY1", "KEY2");
+		// PushService.setDefaultPushCallback(this, ParseActivity.class);
+		//
+		// ParseInstallation installation =
+		// ParseInstallation.getCurrentInstallation();
+		// installation.put("UniqueId",androidId);
+		// installation.put("channel", "Biddus");
+		// installation.setObjectId(null);
+		//
+		// installation.saveInBackground();
+
+		// ParseInstallation.getCurrentInstallation().saveInBackground();
+
 		c = new Configuracion();
+
+		// Notificaciones
+
+		// Intent resultIntent = new Intent(MainActivity.this,
+		// MainActivity.class);
+		// resultIntent.putExtra("texto", "texto"); // Aquí pasamos la
+		// información
+		// PendingIntent resultPendingIntent = PendingIntent.getActivity(
+		// MainActivity.this, 0, resultIntent,
+		// PendingIntent.FLAG_UPDATE_CURRENT);
+		//
+		// NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(
+		// MainActivity.this).setSmallIcon(R.drawable.ic_launcher)
+		// .setContentTitle("titulo").setContentText("texto")
+		// .setContentIntent(resultPendingIntent) // <- Atencion aqui!
+		// .setAutoCancel(true);
+		// NotificationManager mNotificationManager = (NotificationManager)
+		// MainActivity.this
+		// .getSystemService(Context.NOTIFICATION_SERVICE);
+		// mNotificationManager.notify(1, mBuilder.build());
+
+		//
+		//
+		// Intent resultIntent = new Intent(MainActivity.this,
+		// MainActivity.class);
+		// PendingIntent resultPendingIntent =
+		// PendingIntent.getActivity(
+		// MainActivity.this,
+		// 0,
+		// resultIntent,
+		// PendingIntent.FLAG_UPDATE_CURRENT
+		// );
+		//
+		// NotificationCompat.Builder mBuilder =
+		// new NotificationCompat.Builder(MainActivity.this)
+		// .setSmallIcon(R.drawable.ic_launcher)
+		// .setContentTitle("titulo")
+		// .setContentText("texto")
+		// .setContentIntent(resultPendingIntent) // <- Atencion aqui!
+		// .setAutoCancel(true);
+		// NotificationManager mNotificationManager =
+		// (NotificationManager)
+		// MainActivity.this.getSystemService(Context.NOTIFICATION_SERVICE);
+		// mNotificationManager.notify(1, mBuilder.build());
+		//
 
 		arrayCamp = new ArrayList<Campanna>();
 
-		Bundle b = getIntent().getExtras();
-		login = b.getString("login");
-		user_id = b.getString("user_id");
+		// Bundle b = getIntent().getExtras();
+		// login = b.getString("login");
+		// user_id = b.getString("user_id");
+
+		login = c.getToken();
+		user_id = c.getUsuario();
 
 		descon = new TareaWSLogOut();
 
@@ -83,7 +170,7 @@ public class MainActivity extends Activity {
 		lstClientes = (ListView) findViewById(R.id.lista);
 
 		proponCamp = (Button) findViewById(R.id.proponCampanna);
-		
+
 		tituloCamp = (TextView) findViewById(R.id.tituloCampannas);
 		// Button obtener = (Button) findViewById(R.id.button1);
 
@@ -102,16 +189,14 @@ public class MainActivity extends Activity {
 
 		// }
 		// });
-		
-		
-		
+
 		proponCamp.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
-				 Intent intent = new Intent(MainActivity.this,
-				 ProponCampanna.class);
-				 startActivity(intent);
+				Intent intent = new Intent(MainActivity.this,
+						ProponCampanna.class);
+				startActivity(intent);
 			}
 		});
 
@@ -119,13 +204,12 @@ public class MainActivity extends Activity {
 
 	private class TareaWSListar extends AsyncTask<String, Integer, Boolean> {
 
-		// private String brand;
+		private String brand;
 
 		ProgressDialog pDialog;
 
 		@Override
 		protected void onPreExecute() {
-			// TODO Auto-generated method stub
 			super.onPreExecute();
 
 			pDialog = new ProgressDialog(MainActivity.this);
@@ -175,17 +259,26 @@ public class MainActivity extends Activity {
 			 * }
 			 */
 
+			//
+			// String auth = new String(Base64.encode(("mrmiyago" + ":"
+			// + "piscolabis").getBytes(), Base64.URL_SAFE
+			// | Base64.NO_WRAP));
+
 			HttpClient httpClient = new DefaultHttpClient();
 
 			HttpGet del = new HttpGet(c.getMainListar());
 
 			HttpGet campa = new HttpGet(c.getMainListarCampa(user_id));
 
-			del.setHeader("content-type", "application/json");
+			del.setHeader("Content-type", "application/json");
 
+			del.addHeader("Accept", "application/json");
+			
 			del.addHeader("Authorization", "Token token=\"" + login + "\"");
 
-			campa.setHeader("content-type", "application/json");
+			campa.setHeader("Content-type", "application/json");
+
+			campa.addHeader("Accept", "application/json");
 
 			campa.addHeader("Authorization", "Token token=\"" + login + "\"");
 			try {
@@ -332,8 +425,15 @@ public class MainActivity extends Activity {
 		protected void onPostExecute(Boolean result) {
 			try {
 				if (result) {
+					// PushService.setDefaultPushCallback(MainActivity.this,
+					// MainActivity.class);
+					// ParseInstallation.getCurrentInstallation()
+					// .saveInBackground();
+					// ParseInstallation.getCurrentInstallation()
+					// .deleteInBackground();
+
 					proponCamp.setVisibility(1);
-					
+
 					// Rellenamos la lista con los resultados
 					// ArrayAdapter<String> adaptador = new
 					// ArrayAdapter<String>(
@@ -387,12 +487,13 @@ public class MainActivity extends Activity {
 			// desde aqui habría que llamar a la primera imagen tutorial de la
 			// app
 
-			// Intent intent = new Intent(MainActivity.this, Perfil.class);
+			Intent intent = new Intent(MainActivity.this, Tutorial.class);
+			Tutorial.cont = 2;
 			// intent.putExtra("user_id", user_id);
 			// intent.putExtra("login", login);
 			//
-			// startActivity(intent);
-
+			startActivity(intent);
+			finish();
 			// Toast t = Toast.makeText(MainActivity.this,
 			// "Aqui iria el perfil",
 			// Toast.LENGTH_SHORT);
@@ -406,8 +507,6 @@ public class MainActivity extends Activity {
 			intent.putExtra("login", login);
 
 			startActivity(intent);
-
-			
 
 			return true;
 		} else if (id == R.id.exit) {
@@ -481,6 +580,9 @@ public class MainActivity extends Activity {
 			// Log.v("Login final", login);
 			// intent.putExtra("login", login);
 
+			c.setToken("");
+			c.setUsuario("");
+
 			if (respStr.contains("true")) {
 
 				Toast t = Toast.makeText(MainActivity.this, "Hasta pronto",
@@ -514,6 +616,8 @@ public class MainActivity extends Activity {
 		startMain.addCategory(Intent.CATEGORY_HOME);
 		startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		startActivity(startMain);
+
+		// moveTaskToBack(true);
 	}
 
 	public Bitmap descargarImagen(String imageHttpAddress) {

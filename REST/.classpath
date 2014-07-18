@@ -5,6 +5,9 @@
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
-	<classpathentry kind="lib" path="C:/Users/David/Downloads/twitter4j-4.0.2/lib/twitter4j-core-4.0.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/David/Downloads/addthis-android-sdk-0.0.8/addthis-android-sdk-0.0.8/AddThisSDK/libs/addthis0.0.8.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/David/Downloads/addthis-android-sdk-0.0.8/addthis-android-sdk-0.0.8/AddThisSDK/libs/signpost-commonshttp4-1.2.1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/David/Downloads/addthis-android-sdk-0.0.8/addthis-android-sdk-0.0.8/AddThisSDK/libs/signpost-core-1.2.1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/David/Downloads/Parse/Parse-1.5.1.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
